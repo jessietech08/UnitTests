@@ -38,9 +38,7 @@ namespace CPW211_UnitTestStarterCode
             {
                 throw new ArgumentException("Denominator cannot be zero");
             }
-
-            double result = a / b;
-            return result;
+            return a / b;
         }
     }
 }
