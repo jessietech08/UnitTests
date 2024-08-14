@@ -54,9 +54,11 @@ namespace CPW211_UnitTestStarterCode.Tests
 
         // TODO: Test Divide method with two valid numbers
         [TestMethod]
+        [DataRow(double.NaN, 1)]
+        [DataRow(-2, double.NaN)]
         public void Divide_TwoValidNumbers_ThrowsArgumentException(double num1, double num2)
         {
-            Assert.Fail();
+            Assert.ThrowsException<ArgumentException>(() => SimpleMath.Divide(num1, num2));
         }
 
         // TODO: Test subtract method with two valid numbers

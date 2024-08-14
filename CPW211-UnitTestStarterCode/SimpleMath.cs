@@ -34,6 +34,12 @@ namespace CPW211_UnitTestStarterCode
 
         public static double Divide(double a, double b)
         {
+            // checks if a or be is not a number
+            if (double.IsNaN(a) || double.IsNaN(b))
+            {
+                throw new ArgumentException("Inputs must be valid numbers");
+            }
+
             if (b == 0)
             {
                 throw new ArgumentException("Denominator cannot be zero");
