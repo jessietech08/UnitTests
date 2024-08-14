@@ -15,21 +15,23 @@ namespace CPW211_UnitTestStarterCode
     {
         public static double Add(double a, double b)
         {
-            double sum = a + b;
-
-            return sum;
+            return a + b;
         }
 
         public static double Subtract(double a, double b)
         {
-            throw new NotImplementedException();
+            // checks if a or be is not a number
+            if (double.IsNaN(a) || double.IsNaN(b))
+            {
+                throw new ArgumentException("Inputs must be valid numbers");
+            }
+
+            return a - b;
         }
 
         public static double Multiply(double a, double b)
         {
-            double result = a * b;
-
-            return result;
+            return a * b;
         }
 
         public static double Divide(double a, double b)
