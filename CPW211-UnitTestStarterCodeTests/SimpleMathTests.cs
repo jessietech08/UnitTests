@@ -61,6 +61,18 @@ namespace CPW211_UnitTestStarterCode.Tests
             Assert.ThrowsException<ArgumentException>(() => SimpleMath.Divide(num1, num2));
         }
 
+        [TestMethod]
+        [DataRow(10, 5)]
+        [DataRow(4, 2)]
+        [DataRow(100, 10)]
+        public void Divide_TwoNumbers_ReturnsProduct(double num1, double num2)
+        {
+            double product = num1 / num2;
+            double answer = SimpleMath.Divide(num1, num2);
+
+            Assert.AreEqual(product, answer);
+        }
+
         // TODO: Test subtract method with two valid numbers
         [TestMethod]
         [DataRow(double.NaN, 1)]
